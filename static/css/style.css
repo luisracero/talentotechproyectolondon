@@ -204,6 +204,9 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   #card3 .card-text {
     color: #383636c5; /* Cambia el color del texto a negro */
   }
+  #card3 .card-title {
+    color: #14131a;
+  }
 
   .fondo-vapers {
     background-image: url('/static/imagenes/vaperfondo.avif');
