@@ -53,11 +53,18 @@ button[aria-expanded="false"] .navbar-toggler-icon {
     filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(1000%) hue-rotate(100deg); /* Cambia el color a rojo */
 }
 
-/*tamaño del logo*/
+/*tamaño del logo logo izquierdo*/
 .navbar-brand img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+/* Estilos para el logo derecho */
+.navbar-brand.right-logo img {
+  max-width: 150px; /* Ajusta este valor según el tamaño deseado */
+  height: auto; /* Mantiene la proporción */
+  object-fit: contain; /* Asegura que la imagen no se distorsione */
 }
 
 .navbar {
@@ -129,36 +136,7 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   border-color: #e00a80d3; /* Cambia el color del borde al pasar el mouse */
 }
  
-/* Estilos del botón  de agendamiento de la seccion citas */
-  #citas .col-md-4 .btn {
-    /* Estilos específicos para el botón dentro de #citas */
-    background-color: #10cf59; /* Cambia el color de fondo */
-    color: rgb(12, 12, 12); /* Cambia el color del texto */
-    border: 2px solid #a11a6e; /* Cambia el borde */
-    border-radius: 10px; /* Añade bordes redondeados */
-    padding: 10px 20px; /* Ajusta el padding */
-    font-size: 1.2em; /* Cambia el tamaño de la fuente */
-  }
-  
-  #citas .col-md-4 .btn:hover {
-    /* Estilos al pasar el mouse */
-    background-color: #af1052;
-    border-color: #0a0a0a;
-  }
-
-  #citas .row {
-      flex-direction: column; /* Cambia la dirección a columna en móviles */
-  }
-
-  #citas .col-md-4, #citas .col-md-8 {
-      width: 100%; /* Ocupa el ancho completo en móviles */
-  }
-  #citas .col-md-4 {
-    margin-bottom: 1rem; /* Espaciado entre el botón y el carrusel */
-}
-
   /* diseño de las tarjetas de servico*/
-  
   .card {
     background-color: transparent; /* fondo transparente oscuro */
     backdrop-filter: blur(10px); /* efecto de vidrio */
@@ -213,12 +191,13 @@ button[aria-expanded="false"] .navbar-toggler-icon {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 20px;
-    height: 800px;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     display: flex;
-    
+    flex-direction: column;
   }
 
   .vapers .row {
@@ -227,6 +206,13 @@ button[aria-expanded="false"] .navbar-toggler-icon {
     align-items: center;
     height: 100%;
   }
+/* Ajustar el tamaño de las tarjetas en pantallas pequeñas */
+@media (max-width: 768px) {
+  .fondo-vapers .card {
+      width: 100% !important; /* Asegura que las tarjetas ocupen el 100% del ancho */
+      margin-bottom: 20px; /* Añade espacio entre las tarjetas */
+  }
+}
 
   .card-img-top {
     padding-bottom: 20px;
@@ -241,5 +227,15 @@ button[aria-expanded="false"] .navbar-toggler-icon {
     border-image-slice: 1;
     
   }
+
+/*estilo del texto h2 y p de la seccion productos*/
+.productos h1 {
+  text-align: center;
+}
  
+.encabezado {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
 
