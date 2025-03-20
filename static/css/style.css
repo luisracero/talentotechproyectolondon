@@ -191,7 +191,6 @@ button[aria-expanded="false"] .navbar-toggler-icon {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     padding: 20px;
     min-height: 100vh;
     justify-content: center;
@@ -237,5 +236,101 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   text-align: center;
   font-size: 1.3rem;
 }
+/*diseño del formulario*/
+#citas .formulario-container {
+  background-color: #313133;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(224, 220, 220, 0.904);
+  width: 100%;
+  max-width: 400px;
+  
+}
+
+/* Contenedor del formulario */
 
 
+/* Título del formulario */
+.formulario-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #d7e4dc;
+  text-align: center;
+}
+
+/* Estilos para cada campo */
+.campo {
+  margin-bottom: 15px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #e4d7d7;
+}
+
+.campo input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.campo input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilos para el botón de envío */
+/* Estilos específicos para el botón de envío */
+#citas .formulario-container button[type="submit"] {
+  background-color: #28a745; /* Color verde */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#citas .formulario-container button[type="submit"]:hover {
+  background-color: #218838; /* Color verde oscuro al pasar el mouse */
+}
+
+/* Estilos para la columna derecha */
+#columna-derecha {
+  background-color: #313133;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(224, 220, 220, 0.904);
+  width: 100%;
+  max-width: 400px;
+}
+/* Estilos específicos para los botones dentro de #columna-derecha .botones-fila */
+#columna-derecha .botones-fila .btn {
+  background-color: #007bff; /* Color azul */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#columna-derecha .botones-fila .btn:hover {
+  background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+}
+
+/* Estilos para el calendario */
+.calendar {
+  background-color: #21be43;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e7e0e0;
+  margin-top: 20px;
+}

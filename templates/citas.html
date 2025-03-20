@@ -2,6 +2,87 @@
 {% block content %}
 <!--seccion de citas-->
 <div id="citas" class="CITAS py-3">
-   
+  <!-- Contenedor centrado -->
+  <div class="container">
+      <!-- Fila sin espacio entre columnas (gutter cero) -->
+      <div class="row g-0">
+          <!-- Columna izquierda -->
+          <div class="col-md-6">
+              <div class="formulario-container">
+                  <h2>Formulario de Captura de Datos</h2>
+                  <form action="/procesar-formulario" method="POST">
+                      <!-- Campo para el nombre -->
+                      <div class="campo mb-3">
+                          <label for="nombre">Nombre:</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+                      </div>
+
+                      <!-- Campo para el celular -->
+                      <div class="campo mb-3">
+                          <label for="celular">Celular:</label>
+                          <input type="tel" class="form-control" id="celular" name="celular" required placeholder="Ingresa tu número de celular">
+                      </div>
+
+                      <!-- Campo para el correo electrónico -->
+                      <div class="campo mb-3">
+                          <label for="correo">Correo electrónico:</label>
+                          <input type="email" class="form-control" id="correo" name="correo" required placeholder="Ingresa tu correo electrónico">
+                      </div>
+
+                      <!-- Botón de envío -->
+                      <div class="campo">
+                          <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+          <!-- Columna derecha -->
+          <div class="col-md-6" id="columna-derecha">
+              <!-- Tres botones en fila -->
+              <div class="botones-fila d-flex justify-content-between mb-3">
+                  <button type="button" class="btn btn-secondary">Botón 1</button>
+                  <button type="button" class="btn btn-secondary">Botón 2</button>
+                  <button type="button" class="btn btn-secondary">Botón 3</button>
+              </div>
+
+              <!-- Casilla desplegable con 6 opciones -->
+              <div class="mb-3">
+                  <label for="opciones" class="form-label">Selecciona una opción:</label>
+                  <select class="form-select" id="opciones">
+                      <option value="1">Corte Moderno</option>
+                      <option value="2">Corte Urbano</option>
+                      <option value="3">Corte Clásico</option>
+                      <option value="4">Perfilación y Diseño de Barba</option>
+                      <option value="5">Pigmentación de Barba y Cejas</option>
+                      <option value="6">Mascarilla Facial Puntos Negros</option>
+                  </select>
+              </div>
+
+              <!-- Casilla de adiciones con 3 opciones -->
+              <div class="mb-3">
+                  <label class="form-label">Adiciones:</label>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="adicion1">
+                      <label class="form-check-label" for="adicion1">Barba</label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="adicion2">
+                      <label class="form-check-label" for="adicion2">Cejas</label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="adicion3">
+                      <label class="form-check-label" for="adicion3">Mascarillas</label>
+                  </div>
+              </div>
+
+              <!-- Calendario (usando un input de tipo date) -->
+              <div class="calendar">
+                  <label for="calendario" class="form-label">Selecciona una fecha:</label>
+                  <input type="week" class="form-control" id="calendario">
+              </div>
+          </div>
+      </div>
   </div>
-  {% endblock %}
+</div>
+{% endblock %}
