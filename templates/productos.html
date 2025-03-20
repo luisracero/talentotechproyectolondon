@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="productos">
+    <h1>Monkey vaper</h1>
+    <p>En nuestra tienda de vapers, ofrecemos una amplia variedad de dispositivos y esencias con o sin nicotina en sabores únicos. ¡Encuentra todo lo que necesitas para disfrutar del vaping
+    </p>
+    <div class="vapers">
+      <div class="vapers fondo-vapers">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="width: 100%;">
+            <div id="comprar" class="card-body">
+              <h5 class="card-title">Vape Monkey</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <img src="{{ url_for('static', filename='imagenes/vp1.png') }}" class="card-img-top" alt="...">
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">Vape Monkey</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <img src="{{ url_for('static', filename='imagenes/vp2.jpg') }}" class="card-img-top" alt="...">
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" id="card3">
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">Vape Monkey</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img src="{{ url_for('static', filename='imagenes/vp3.jpg') }}" class="card-img-top" alt="...">
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div> 
+    </div>
+  
+</div>
+{% endblock %}

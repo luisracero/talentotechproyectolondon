@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+<!--seccion servicios-->
+<div id="servicios" class="SERVICIOS py-3 px-4">
+  <h1 class="text-center">Nuestros Servicios</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 100%;">
+        <img src="{{ url_for('static', filename='imagenes/cortes4.avif') }}" class="card-img-top" alt="corte clasico">
+        <div class="card-body">
+          <h5 class="card-title">Cortes Modernos</h5>
+          <p class="card-text">Te garantizamos un corte que se adapte a tu personalidad y estilo de vida</p>
+          <a href="#" class="btn btn-primary">¡Reservar Cita!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 100%;">
+        <img src="{{ url_for('static', filename='imagenes/cortes3.avif') }}" class="card-img-top" alt="corte clasico">
+        <div class="card-body">
+          <h5 class="card-title">Corte Urbano</h5>
+          <p class="card-text">Son la esencia de la moda contemporánea, diseñados para hombres que buscan un estilo fresco, audaz y lleno de actitud.</p>
+          <a href="#" class="btn btn-primary">¡Reservar Cita!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 100%;">
+        <img src="{{ url_for('static', filename='imagenes/corteclasico.PNG') }}" class="card-img-top" alt="corte clasico">
+        <div class="card-body">
+          <h5 class="card-title">Corte Clasico</h5>
+          <p class="card-text">Un corte de pelo clásico y elegante, perfecto para aquellos que buscan un look sofisticado y atemporal. </p>
+          <a href="#" class="btn btn-primary">¡Reservar Cita!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3"></div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 100%;">
+        <img src="{{ url_for('static', filename='imagenes/rasuradobrillo.jpg') }}" class="card-img-top" alt="corte clasico">
+        <div class="card-body">
+          <h5 class="card-title">Perfilación y Diseño de Barba</h5>
+          <p class="card-text">Nos especializamos en la perfilación y diseño de barba, utilizando técnicas precisas para resaltar tus facciones y darte un aspecto impecable.</p>
+          <a href="#" class="btn btn-primary">¡Reservar Cita!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 100%;">
+        <img src="{{ url_for('static', filename='imagenes/pigmentacion.jpg') }}" class="card-img-top" alt="corte clasico">
+        <div class="card-body">
+          <h5 class="card-title">Pigmentación de Barba y Cejas</h5>
+          <p class="card-text">Creamos un efecto natural que rellena áreas despobladas, define la forma de tu barba y cejas, y potencia tu apariencia.</p>
+          <a href="#" class="btn btn-primary">¡Reservar Cita!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 100%;">
+        <img src="{{ url_for('static', filename='imagenes/mascarilla2.avif') }}" class="card-img-top" alt="corte clasico">
+        <div class="card-body">
+          <h5 class="card-title">Mascarilla Facial Puntos Negros</h5>
+          <p class="card-text">Ofrecemos un tratamiento facial especializado con mascarillas diseñadas para limpiar profundamente tu piel, eliminar impurezas y reducir los puntos negros.</p>
+          <a href="#" class="btn btn-primary">¡Reservar Cita!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

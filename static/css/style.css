@@ -1,0 +1,242 @@
+/* reglas genrales de la aplicacion*/
+body {
+    background-color:#060608f8;
+    color: white;
+    font-family: "Lilita One", serif;
+    margin: 0;
+    padding: 0;
+}
+/* Barra de navegacion*/
+.navbar {
+  padding: 2rem;
+  height: 160px;
+  background-color:black
+}
+.navbar-collapse {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(231, 237, 238, 0.904);
+    font-family: "Lilita One", serif;
+    font-size: 1.5rem;
+    margin: 0 1rem; /* Agrega espacio entre los elementos del menú */
+    transition: color 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #93a293; /* Cambia el color al pasar el mouse */
+}
+
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto; /* Ajusta la altura para pantallas pequeñas */
+        padding: 0.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.2rem; /* Reduce el tamaño de la fuente para pantallas pequeñas */
+        margin: 0.5rem 0; /* Ajusta el espacio para elementos apilados */
+    }
+}
+
+/* Cambiar el color del ícono cuando el menú está expandido */
+button[aria-expanded="true"] .navbar-toggler-icon {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(1000%) hue-rotate(200deg); /* Cambia el color a azul */
+}
+
+/* Cambiar el color del ícono cuando el menú NO está expandido (colapsado) */
+button[aria-expanded="false"] .navbar-toggler-icon {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(1000%) hue-rotate(100deg); /* Cambia el color a rojo */
+}
+
+/*tamaño del logo*/
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.navbar {
+  overflow: hidden;
+}
+ @media screen and (max-width: 767px) {
+  .navbar-brand {
+    display: none;
+  }
+ }
+/*carusel de imagenes en la seccion inicio*/
+#carouselExampleCaptions {
+  height: 600px; /* Altura deseada */
+  margin: 0 20px; /* Centrar el carrusel horizontalmente */
+  object-position: center; /* Centra la imagen dentro del contenedor */
+}
+#carouselExampleCaptions:hover {
+  animation-play-state: paused;
+}
+
+#carouselExampleCaptions:not(:hover) {
+  animation-play-state: running;
+  animation-delay: 1s;
+}
+.carousel-inner, .carousel-item, .carousel-item img {
+  height: 100%; /* Asegura que el contenedor y las imágenes ocupen toda la altura */
+}
+
+.carousel-item img {
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarse */
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions {
+      height: 300px; /* Altura más pequeña para dispositivos móviles */
+      margin: 0 10px; /* Margen lateral reducido */
+  }
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  backdrop-filter: blur(5px); /* Aplica un blur de 5px */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+}
+/* Estilos para el botón del carrusel  inico agendar citas*/
+.carousel-button {
+  position: absolute; /* Posiciona el botón de manera absoluta */
+  top: 50%; /* Lo coloca en el centro vertical */
+  left: 50%; /* Lo coloca en el centro horizontal */
+  transform: translate(-50%, -50%); /* Centra el botón correctamente */
+  z-index: 10; /* Asegura que el botón esté por encima de la imagen */
+}
+
+.carousel-button .btn {
+  font-size: 1.2rem; /* Tamaño del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border: 2px solid #ebeff3; /* Borde sólido y color */
+  background-color: transparent; /* Fondo transparente */
+  border-radius: 0; /* Bordes cuadrados */
+  backdrop-filter: blur(50px);
+  color: rgb(21, 214, 140);
+  box-shadow: 0 0 10px rgba(231, 151, 177, 0.5);
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+}
+
+.carousel-button .btn:hover {
+  background-color: #121213; /* Cambia el fondo al pasar el mouse */
+  color: white; /* Cambia el color del texto al pasar el mouse */
+  border-color: #e00a80d3; /* Cambia el color del borde al pasar el mouse */
+}
+ 
+/* Estilos del botón  de agendamiento de la seccion citas */
+  #citas .col-md-4 .btn {
+    /* Estilos específicos para el botón dentro de #citas */
+    background-color: #10cf59; /* Cambia el color de fondo */
+    color: rgb(12, 12, 12); /* Cambia el color del texto */
+    border: 2px solid #a11a6e; /* Cambia el borde */
+    border-radius: 10px; /* Añade bordes redondeados */
+    padding: 10px 20px; /* Ajusta el padding */
+    font-size: 1.2em; /* Cambia el tamaño de la fuente */
+  }
+  
+  #citas .col-md-4 .btn:hover {
+    /* Estilos al pasar el mouse */
+    background-color: #af1052;
+    border-color: #0a0a0a;
+  }
+
+  #citas .row {
+      flex-direction: column; /* Cambia la dirección a columna en móviles */
+  }
+
+  #citas .col-md-4, #citas .col-md-8 {
+      width: 100%; /* Ocupa el ancho completo en móviles */
+  }
+  #citas .col-md-4 {
+    margin-bottom: 1rem; /* Espaciado entre el botón y el carrusel */
+}
+
+  /* diseño de las tarjetas de servico*/
+  
+  .card {
+    background-color: transparent; /* fondo transparente oscuro */
+    backdrop-filter: blur(10px); /* efecto de vidrio */
+    border: 1px solid rgba(255, 255, 255, 0.39); /* borde blanco transparente */
+    box-shadow: 0 0 10px rgba(82, 115, 153, 0.5); /* sombra oscura */
+    
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .card-body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: rgba(204, 204, 204, 39); /* texto gris */
+    backdrop-filter: blur(50px);
+  }
+  
+  .card-body h5 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* titulo blanco */
+    
+  }
+  
+  .card-body p {
+    margin-bottom: 20px;
+    color: #f8fbfc; /* texto blanco */
+  }
+  
+  .card-body a {
+    text-decoration: none;
+    color: #ccb21f; /* texto amarillo */
+    background-color: #14131a;
+  }
+  
+  #card3 .card-text {
+    color: #383636c5; /* Cambia el color del texto a negro */
+  }
+
+  .fondo-vapers {
+    background-image: url('/static/imagenes/vaperfondo.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+  }
+
+  .vapers .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .card-img-top {
+    padding-bottom: 20px;
+  }
+  
+
+  
+  .btn {
+    background-color:black;
+    border: 1px solid;
+    border-image: linear-gradient(to right, #2fe63e, #3745c5, #0ba773, #03A9F4, #2fe63e);
+    border-image-slice: 1;
+    
+  }
+ 
+
