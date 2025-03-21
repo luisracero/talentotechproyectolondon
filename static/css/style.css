@@ -240,11 +240,8 @@ button[aria-expanded="false"] .navbar-toggler-icon {
 #citas .formulario-container {
   background-color: #313133;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 8px 8px 8px 0;
   box-shadow: 0 0 10px rgba(224, 220, 220, 0.904);
-  width: 100%;
-  max-width: 400px;
-  
 }
 
 /* Contenedor del formulario */
@@ -304,12 +301,16 @@ button[aria-expanded="false"] .navbar-toggler-icon {
 /* Estilos para la columna derecha */
 #columna-derecha {
   background-color: #313133;
-  padding: 20px;
-  border-radius: 8px;
+  border-radius: 0 8px 8px 8px;
   box-shadow: 0 0 10px rgba(224, 220, 220, 0.904);
-  width: 100%;
-  max-width: 400px;
+  max-width:50%;
+  padding: 20px;
+  position: relative; /* Necesario para clip-path */
+  overflow: hidden;
+    clip-path: inset(-10px -10px -10px 0); /* Recorta la sombra del borde izquierdo */
 }
+ 
+
 /* Estilos específicos para los botones dentro de #columna-derecha .botones-fila */
 #columna-derecha .botones-fila .btn {
   background-color: #007bff; /* Color azul */
