@@ -266,21 +266,26 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #e4d7d7;
+  color: #ebf3ef;
 }
 
 .campo input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   font-size: 16px;
+  border-color: none;
+  outline: none;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  padding: 1rem;
+  background-color: #ccc;
+  transition: 300ms ease-in-out;
 }
 
 .campo input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+ background-color: white;
+ transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
 }
 
 /* Estilos para el botón de envío */
@@ -383,4 +388,60 @@ button[aria-expanded="false"] .navbar-toggler-icon {
 .opcion-btn .seleccionado {
   background-color: #007bff; /* Color de fondo cuando está seleccionado */
   transform: scale(0.95); /* Efecto de "undido" permanente */
+}
+
+
+/* From Uiverse.io by adamgiebl */ 
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  font-family: Arial, sans-serif;
+  color: rgb(236, 234, 234);
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox .checkmark {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background-color: #f00d0dee;
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
+        #e3e3e3 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox .checkmark::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background-color: #171817;
+  box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.checkbox input:checked + .checkmark {
+  background-color: #0e20c0;
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #b7b9b7 0px 0px 0px 2px inset, #b7b9b7 0px 0px 0px 24px inset,
+        rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+}
+
+.checkbox input:checked + .checkmark::after {
+  background-color: white;
+}
+
+.checkbox .label {
+  margin-right: 10px;
+  user-select: none;
+  font-weight: 700;
+  cursor: pointer;
 }
