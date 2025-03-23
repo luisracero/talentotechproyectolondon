@@ -142,7 +142,13 @@ button[aria-expanded="false"] .navbar-toggler-icon {
     backdrop-filter: blur(10px); /* efecto de vidrio */
     border: 1px solid rgba(255, 255, 255, 0.39); /* borde blanco transparente */
     box-shadow: 0 0 10px rgba(82, 115, 153, 0.5); /* sombra oscura */
-    
+    display: flex;
+    transition: .4s ease-in-out;
+  }
+
+  .card:hover{
+    transform: scale(1.05);
+    border: 1px solid rgb(205, 205, 226);
   }
   
   .card-img-top {
@@ -288,21 +294,63 @@ button[aria-expanded="false"] .navbar-toggler-icon {
              -13px -13px 100px #ffffff;
 }
 
-/* Estilos para el botón de envío */
-/* Estilos específicos para el botón de envío */
-#citas .formulario-container button[type="submit"] {
-  background-color: #28a745; /* Color verde */
-  color: #fff; /* Texto blanco */
-  border: none; /* Sin borde */
-  border-radius: 4px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  transition: background-color 0.3s ease; /* Transición suave */
+
+
+/* From Uiverse.io by adamgiebl */ 
+
+
+.boton-citas {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.7em 2.4em;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: royalblue;
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
 }
 
-#citas .formulario-container button[type="submit"]:hover {
-  background-color: #218838; /* Color verde oscuro al pasar el mouse */
+.boton-citas span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 4px solid royalblue;
+}
+
+.boton-citas span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+.boton-citas:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: royalblue;
+}
+
+.boton-citas:hover {
+  color: white;
+}
+
+.boton-citas:active span::before {
+  background: #2751cd;
 }
 
 /* Estilos para la columna derecha */
@@ -390,58 +438,65 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   transform: scale(0.95); /* Efecto de "undido" permanente */
 }
 
+/* From Uiverse.io by adamgiebl */
 
-/* From Uiverse.io by adamgiebl */ 
+/* Contenedor principal del checkbox */
 .checkbox {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  font-family: Arial, sans-serif;
-  color: rgb(236, 234, 234);
+  display: flex;                  /* Usa Flexbox para alinear los elementos hijos */
+  align-items: center;           /* Alinea los elementos hijos verticalmente al centro */
+  margin: 10px;                  /* Margen exterior de 10px alrededor del contenedor */
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  color: rgb(236, 234, 234);     /* Color del texto */
 }
 
+/* Oculta el input checkbox nativo */
 .checkbox input {
-  display: none;
+  display: none;                 /* Oculta el input checkbox real */
 }
 
+/* Estilo del checkmark (la casilla personalizada) */
 .checkbox .checkmark {
-  width: 28px;
-  height: 28px;
-  border-radius: 10px;
-  background-color: #f00d0dee;
-  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
-        #e3e3e3 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
-  cursor: pointer;
-  position: relative;
-}
-
-.checkbox .checkmark::after {
-  content: "";
-  width: 18px;
-  height: 18px;
-  border-radius: 5px;
-  background-color: #171817;
-  box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: background-color 0.3s ease-in-out;
-}
-
-.checkbox input:checked + .checkmark {
-  background-color: #0e20c0;
-  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #b7b9b7 0px 0px 0px 2px inset, #b7b9b7 0px 0px 0px 24px inset,
-        rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
-}
-
-.checkbox input:checked + .checkmark::after {
-  background-color: white;
-}
-
-.checkbox .label {
   margin-right: 10px;
-  user-select: none;
-  font-weight: 700;
-  cursor: pointer;
+  width: 28px;                   /* Ancho del checkmark */
+  height: 28px;                  /* Alto del checkmark */
+  border-radius: 10px;           /* Bordes redondeados */
+  box-shadow: rgba(236, 232, 232, 0.62) 0px 0px 5px inset, rgba(247, 242, 242, 0.829) 0px 0px 0px 24px inset,
+        #e3e3e3 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px; /* Sombras internas y externas */
+  cursor: pointer;               /* Cambia el cursor a una mano al pasar sobre el checkmark */
+  position: relative;            /* Permite posicionar elementos hijos relativamente */
+}
+
+/* Pseudo-elemento que representa el "interior" del checkmark */
+.checkbox .checkmark::after {
+  content: "";                   /* Contenido vacío (necesario para pseudo-elementos) */
+  width: 18px;                   /* Ancho del interior */
+  height: 18px;                  /* Alto del interior */
+  border-radius: 5px;            /* Bordes redondeados del interior */
+  background-color: #14020d;     /* Color de fondo del interior (rosa) */
+  box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px; /* Sombra del interior */
+  position: absolute;            /* Posiciona el interior absolutamente dentro del checkmark */
+  top: 50%;                      /* Centra verticalmente */
+  left: 50%;                     /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el centrado */
+  transition: background-color 0.3s ease-in-out; /* Transición suave del color de fondo */
+}
+
+/* Estilo del checkmark cuando el checkbox está marcado */
+.checkbox input:checked + .checkmark {
+  background-color: #0e20c0;     /* Cambia el color de fondo del checkmark a azul */
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #08df08 0px 0px 0px 2px inset, #07e407 0px 0px 0px 24px inset,
+        rgba(4, 216, 4, 0.45) 0px 1px 0px 0px; /* Cambia las sombras del checkmark */
+}
+
+/* Estilo del interior del checkmark cuando el checkbox está marcado */
+.checkbox input:checked + .checkmark::after {
+  background-color: rgba(61, 230, 89, 0.445);       /* Cambia el color del interior a blanco */
+}
+
+/* Estilo de la etiqueta de texto */
+.checkbox .label {
+  margin-right: 10px;            /* Margen derecho de 10px para separar el texto del checkmark */
+  user-select: none;             /* Evita que el texto sea seleccionable */
+  font-weight: 700;              /* Texto en negrita */
+  cursor: pointer;               /* Cambia el cursor a una mano al pasar sobre el texto */
 }
