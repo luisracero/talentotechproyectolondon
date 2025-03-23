@@ -125,14 +125,14 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   background-color: transparent; /* Fondo transparente */
   border-radius: 0; /* Bordes cuadrados */
   backdrop-filter: blur(50px);
-  color: rgb(21, 214, 140);
+  color: rgb(239, 241, 240);
   box-shadow: 0 0 10px rgba(231, 151, 177, 0.5);
   transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
 }
 
 .carousel-button .btn:hover {
   background-color: #121213; /* Cambia el fondo al pasar el mouse */
-  color: white; /* Cambia el color del texto al pasar el mouse */
+  color: rgb(38, 26, 211); /* Cambia el color del texto al pasar el mouse */
   border-color: #e00a80d3; /* Cambia el color del borde al pasar el mouse */
 }
  
@@ -238,10 +238,12 @@ button[aria-expanded="false"] .navbar-toggler-icon {
 }
 /*diseño del formulario*/
 #citas .formulario-container {
-  background-color: #313133;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
   padding: 20px;
   border-radius: 10px 0 0 10xp;
   box-shadow: 0 0 10px rgba(224, 220, 220, 0.904);
+  
 }
 
 /* Contenedor del formulario */
@@ -300,7 +302,8 @@ button[aria-expanded="false"] .navbar-toggler-icon {
 
 /* Estilos para la columna derecha */
 #columna-derecha {
-  background-color: #313133;
+  background-color:transparent;
+  backdrop-filter: blur(30px);
   border-radius: 0 10px 10px 0;
   box-shadow: 0 0 10px rgba(224, 220, 220, 0.904);
   max-width:50%;
@@ -313,7 +316,7 @@ button[aria-expanded="false"] .navbar-toggler-icon {
 
 /* Estilos específicos para los botones dentro de #columna-derecha .botones-fila */
 #columna-derecha .botones-fila .btn {
-  background-color: #007bff; /* Color azul */
+  background-color: #0dc225; /* Color azul */
   color: #fff; /* Texto blanco */
   border: none; /* Sin borde */
   border-radius: 4px; /* Bordes redondeados */
@@ -321,10 +324,11 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   font-size: 16px; /* Tamaño de fuente */
   cursor: pointer; /* Cambia el cursor al pasar el mouse */
   transition: background-color 0.3s ease; /* Transición suave */
+
 }
 
 #columna-derecha .botones-fila .btn:hover {
-  background-color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+  background-color: #14bd22b9; /* Color azul más oscuro al pasar el mouse */
 }
 
 /* Estilos para el calendario */
@@ -334,4 +338,49 @@ button[aria-expanded="false"] .navbar-toggler-icon {
   border-radius: 8px;
   border: 1px solid #e7e0e0;
   margin-top: 20px;
+}
+
+/*seccion de citas fondo*/
+#citas {
+  background-image: url('/static/imagenes/fondocita2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/*opciones para escojer el barbero*/
+.botones-fila {
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.opcion-btn {
+  flex: 1; /* Ocupa el espacio disponible */
+  padding: 10px 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  background-color: #6c757d; /* Color de fondo (gris de Bootstrap) */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  transition: background-color 0.3s, transform 0.1s; /* Transición suave */
+}
+
+.opcion-btn:hover {
+  background-color: #5a6268; /* Color de fondo al pasar el mouse */
+}
+
+.opcion-btn:active {
+  transform: scale(0.95); /* Efecto de "undido" al hacer clic */
+}
+
+.opcion-btn .seleccionado {
+  background-color: #007bff; /* Color de fondo cuando está seleccionado */
+  transform: scale(0.95); /* Efecto de "undido" permanente */
 }
