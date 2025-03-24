@@ -10,7 +10,7 @@
           <div class="col-md-6">
               <div class="formulario-container" style="width: 100%;">
                   <h2>Formulario de Captura de Datos</h2>
-                  <form action="/procesar-formulario" method="POST">
+                  <form action="{{ url_for('citas') }}" method="POST">
                       <!-- Campo para el nombre -->
                       <div class="campo mb-3">
                           <label for="nombre">Nombre:</label>

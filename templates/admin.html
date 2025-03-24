@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h1 class="text-center">Lista de Citas</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th>Servicio</th>
+                <th>Adiciones</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cita in citas %}
+            <tr>
+                <td>{{ cita.nombre }}</td>
+                <td>{{ cita.celular }}</td>
+                <td>{{ cita.correo }}</td>
+                <td>{{ cita.servicio }}</td>
+                <td>{{ cita.adiciones }}</td>
+                <td>{{ cita.fecha }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
