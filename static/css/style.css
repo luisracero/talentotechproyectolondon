@@ -65,6 +65,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 
@@ -146,6 +147,53 @@ line-height: 57px;
   text-decoration: underline;
 }
 
+.btnl{
+  width: 100%;
+  height: 45px;
+  background:#93a293;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color:#fff;
+  font-weight: 500;
+}
+
+.login-register{
+  font-size: .9em;
+  color: #9d9ca3;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+
+.login-register p a {
+  color: #9d9ca3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register p a:hover{
+  text-decoration: underline;
+}
+
+.formulario-login .icon-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  font-size: 2em;
+  background: #07e407;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius:20px ;
+  cursor: pointer;
+  z-index: 1;
+}
 /* Ajustes responsivos */
 @media (max-width: 768px) {
     .navbar {
