@@ -53,7 +53,26 @@ body {
 }
 
 /*formulario de login*/
-.formulario-login{
+/* CONTENEDOR PRINCIPAL (nuevo) */
+.formulario-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.formulario-container.active {
+  display: flex;
+}
+
+/* TUS ESTILOS ORIGINALES (conservados exactamente igual) */
+.formulariologin {
   position: relative;
   width: 400px;
   height: 440px;
@@ -66,45 +85,57 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  transition: height .2s ease;
 }
 
+.formulariologin.active {
+  height:520px;
+}
 
-.formulario-login .form-box{
+.formulariologin .form-box {
   width: 100%;
   padding: 40px;
+  position: absolute; /* Añadido para transiciones */
+  transition: transform .5s ease; /* Añadido para transiciones */
 }
-.form-box h2{
+
+.form-box h2 {
   font-size: 2em;
   color: #9d9ca3;
   text-align: center;
 }
 
-.input-box{
+.input-box {
   position: relative;
   width: 100%;
   height:50px;
   border-bottom: 2px solid #9d9ca3;
   margin: 30px 0;
+  display: flex;
+  align-items: center;
 }
 
-.input-box label{
+.input-box label {
   position: absolute;
   top:50%;
-  left: 5px;
-  transform: translate(-50%);
+  left: 10px;
+  transform: translatey(-50%);
   font-size: 1em;
   color: #93a293;
   font-weight: 500;
-  pointer-events:none ;
-  transition: 2s;
+  pointer-events:none;
+  transition: 0.3s ease-in-out;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label{
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown):not(:focus) ~ label {
   top: -5px;
+  font-size: 0.9em;
 }
 
-.input-box input{
+ 
+  
+.input-box input {
   width: 100%;
   height:50px;
   background: transparent;
@@ -116,15 +147,15 @@ body {
   padding: 0 35px 0 5px;
 }
 
-.input-box .icon{
-position: absolute;
-right: 8px;
-font-size: 1.2em;
-color: #07e407;
-line-height: 57px;
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #07e407;
+  line-height: 57px;
 }
 
-.recordarme{
+.recordarme {
   font-size: .9em;
   color: #93a293;
   font-weight: 500;
@@ -133,7 +164,7 @@ line-height: 57px;
   justify-content: space-between;
 }
 
-.recordarme label input{
+.recordarme label input {
   accent-color: #07e407;
   margin-right: 3px;
 }
@@ -143,11 +174,11 @@ line-height: 57px;
   text-decoration: none;
 }
 
-.recordarme a:hover{
+.recordarme a:hover {
   text-decoration: underline;
 }
 
-.btnl{
+.btnl {
   width: 100%;
   height: 45px;
   background:#93a293;
@@ -160,7 +191,7 @@ line-height: 57px;
   font-weight: 500;
 }
 
-.login-register{
+.login-register {
   font-size: .9em;
   color: #9d9ca3;
   text-align: center;
@@ -174,26 +205,95 @@ line-height: 57px;
   font-weight: 600;
 }
 
-.login-register p a:hover{
+.login-register p a:hover {
   text-decoration: underline;
 }
 
-.formulario-login .icon-close{
+.formulariologin .icon-close {
   position: absolute;
   top: 0;
   right: 0;
   width: 45px;
   height: 45px;
   font-size: 2em;
-  background: #07e407;
+  background: #3be63b;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom-left-radius:20px ;
+  border-bottom-left-radius:20px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 999;
 }
+
+.formulariologin .icon-close::after {
+  content: "×";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+/* REGLAS PARA LAS TRANSICIONES (añadidas) */
+.formulariologin .form-box.Login {
+  transform: translateX(0);
+}
+
+.formulariologin .form-box.registro {
+  transform: translateX(400px);
+}
+
+.formulariologin.active .form-box.Login {
+  transform: translateX(-400px);
+}
+
+.formulariologin.active .form-box.registro {
+  transform: translateX(0);
+}
+
+/* Transiciones con :target */
+.form-box {
+  transition: transform 0.5s ease;
+}
+
+/* Estado inicial - Login visible */
+#login-form {
+  transform: translateX(0);
+}
+
+/* Estado inicial - Registro oculto */
+#register-form {
+  transform: translateX(100%);
+}
+
+/* Cuando se activa el registro */
+#register-form:target {
+  transform: translateX(0);
+}
+
+#register-form:target ~ #login-form {
+  transform: translateX(-100%);
+}
+
+/* Cuando vuelve al login */
+#login-form:target {
+  transform: translateX(0);
+}
+
+#login-form:target ~ #register-form {
+  transform: translateX(100%);
+}
+
+/* Ajuste para el botón de cerrar */
+.icon-close {
+  z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
 /* Ajustes responsivos */
 @media (max-width: 768px) {
     .navbar {
