@@ -1,5 +1,15 @@
 from flask import Flask, render_template
-from login import app  # Importamos la app desde login.py
+from flask_mysqldb import MySQL
+from config import Config
+from login import crear_base_de_datos  # Importar solo la función, no la app
+
+app = Flask(__name__)
+app.config.from_object(Config)  # Cargar configuración desde config.py
+
+mysql = MySQL(app)  # Inicializar MySQL con Flask
+
+# Crear la base de datos si no existe
+crear_base_de_datos()
 
 @app.route("/")
 def inicio():

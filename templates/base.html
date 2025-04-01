@@ -60,15 +60,15 @@
             <!-- Formulario Login (activo por defecto) -->
             <div class="form-box login active" id="login-form">
                 <h2>Login</h2>
-                <form action="#">
+                <form action="{{url_for('login_user')}}" method="post">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required placeholder="">
+                        <input type="email" required placeholder="correo electronico">
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-open"></ion-icon></span>
-                        <input type="password" required placeholder="">
+                        <input type="password" name="password" required placeholder="Contraseña">
                         <label>Contraseña</label>
                     </div>
                     <div class="recordarme">
@@ -85,15 +85,15 @@
             <!-- Formulario Registro (oculto por defecto) -->
             <div class="form-box registro" id="register-form">
                 <h2>Registro</h2>
-                <form action="#">
+                <form action="{{url_for('registro')}}" method="post">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="email" required placeholder="">
+                        <input type="email" name="email" required placeholder="correo electronico">
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required placeholder="">
+                        <input type="password" name="password" placeholder="Contraseña">
                         <label>Contraseña</label>
                     </div>
                     <div class="recordarme">
