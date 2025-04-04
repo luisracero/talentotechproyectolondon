@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_mysqldb import MySQL
 from config import Config
 from login import crear_base_de_datos
+from werkzeug.security import generate_password_hash, check_password_hash
 import MySQLdb
 
 app = Flask(__name__)
@@ -61,6 +62,46 @@ def login_user():
             flash(f'Error al conectar con la base de datos: {str(e)}', 'error')
     
     return render_template('login.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    """Maneja el registro de nuevos usuarios"""
+    if request.method == 'POST':
+        email = request.form.get('email', '').strip().lower()
+        password = request.form.get('password', '')
+        
+        # Validaciones básicas
+        if not email or not password:
+            flash('Todos los campos son obligatorios', 'error')
+            return redirect(url_for('login_user'))
+        
+        try:
+            # Verificar si el email ya existe
+            cursor = mysql.connection.cursor()
+            cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))
+            if cursor.fetchone():
+                flash('Este email ya está registrado', 'error')
+                return redirect(url_for('login_user'))
+            
+            # Hashear y guardar la contraseña
+            hashed_pw = generate_password_hash(password)
+            cursor.execute(
+                "INSERT INTO usuarios (email, password_hash) VALUES (%s, %s)",
+                (email, hashed_pw)
+            )
+            mysql.connection.commit()
+            
+            flash('¡Registro exitoso! Ahora puedes iniciar sesión', 'success')
+            return redirect(url_for('login_user'))
+            
+        except Exception as e:
+            flash('Error en el registro. Intenta nuevamente.', 'error')
+            print(f"Error: {str(e)}")
+        finally:
+            cursor.close()
+    
+    return redirect(url_for('login_user'))
+
 
 @app.route('/logout')
 def logout():
