@@ -60,7 +60,19 @@
             <!-- Formulario Login (activo por defecto) -->
             <div class="form-box login active" id="login-form">
                 <h2>Login</h2>
-                <form action="{{url_for('login_user')}}" method="post">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+                    <form id="login-form">
+
                     <div class="input-box">
                         <input type="email" name="email" required placeholder="">
                         <label>Email</label>
@@ -83,7 +95,7 @@
             <!-- Formulario Registro (oculto por defecto) -->
             <div class="form-box registro" id="register-form">
                 <h2>Registro</h2>
-                <form action="{{url_for('login_user')}}" method="post">
+                <form id="register-form">
                     <div class="input-box">
                         <input type="email" name="email" required placeholder="">
                         <label>Email</label>
